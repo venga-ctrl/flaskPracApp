@@ -31,11 +31,16 @@ def e2e():
         return "The name of this test is %s" % request.form['testName']
     return render_template("e2eUserInputs.html")
 
+@app.route('/thehindu')
+def thehindu():
+    return render_template("thehindu.html") 
+
+
 @app.route('/nyt')
 def nyt():
     nysc = requests.get('https://www.nytimes.com/pages/opinion/index.html')
     nysp = BeautifulSoup(nysc.content, 'lxml')
-    lk = nysp.select('#spanABCRegion > div.spanAB.wrap.module > div.cColumn > div > div > div > div > div > h3 > a')
+    lk = nysp.select('#spanABCRegion > div.spanAB.wrap.module > div.cColumn > div > div >  h3 > a')
     lk2 = lk[0]['href']
     editHead = lk[0].text
     nysc1 = requests.get(lk2)
