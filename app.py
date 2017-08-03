@@ -35,7 +35,7 @@ def e2e():
 def nyt():
     nysc = requests.get('https://www.nytimes.com/pages/opinion/index.html')
     nysp = BeautifulSoup(nysc.content, 'lxml')
-    lk = nysp.select('#spanABCRegion > div.spanAB.wrap.module > div.cColumn > div > div.story > h3 > a')
+    lk = nysp.select('#spanABCRegion > div.spanAB.wrap.module > div.cColumn > div > div > div > div > div > h3 > a')
     lk2 = lk[0]['href']
     editHead = lk[0].text
     nysc1 = requests.get(lk2)
@@ -45,7 +45,6 @@ def nyt():
     for ec in editCnt:
         ecBin.append(ec.text)
     return render_template("nyt.html", editorialHeader=', '.join((editHead,dt.date.today().strftime("%m/%d/%Y"))), editorialContent='\n\n'.join(ecBin))
-
 
 if __name__ == "__main__":
     app.run(debug = True)
