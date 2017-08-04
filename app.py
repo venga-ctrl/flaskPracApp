@@ -1,3 +1,4 @@
+import getNyt
 from flask import Flask, url_for, redirect, render_template, request
 import getpass
 import lxml
@@ -33,23 +34,22 @@ def e2e():
 
 @app.route('/thehindu')
 def thehindu():
-    return render_template("thehindu.html") 
+    # if request.method == 'POST':
+    #    return redirect(url_for("nyt"))
+    nyEdt = getNyt.thehindu()
+    return render_template("thehindu.html", editorialHeader1=', '.join((nyEdt[0],dt.date.today().strftime("%m/%d/%Y"))), editorialContent1='\n\n'.join(nyEdt[1]),
+        editorialHeader2=', '.join((nyEdt[2],dt.date.today().strftime("%m/%d/%Y"))), editorialContent2='\n\n'.join(nyEdt[3]))
 
 
 @app.route('/nyt')
 def nyt():
-    nysc = requests.get('https://www.nytimes.com/pages/opinion/index.html')
-    nysp = BeautifulSoup(nysc.content, 'lxml')
-    lk = nysp.select('#spanABCRegion > div.spanAB.wrap.module > div.cColumn > div > div >  h3 > a')
-    lk2 = lk[0]['href']
-    editHead = lk[0].text
-    nysc1 = requests.get(lk2)
-    nysp1 = BeautifulSoup(nysc1.content, 'lxml')
-    editCnt = nysp1.find_all('p', class_="story-body-text story-content")
-    ecBin = []
-    for ec in editCnt:
-        ecBin.append(ec.text)
-    return render_template("nyt.html", editorialHeader=', '.join((editHead,dt.date.today().strftime("%m/%d/%Y"))), editorialContent='\n\n'.join(ecBin))
+    nyEdt = getNyt.nyt()
+    return render_template("nyt.html", editorialHeader=', '.join((nyEdt[0],dt.date.today().strftime("%m/%d/%Y"))), editorialContent='\n\n'.join(nyEdt[1]))
+
+@app.route('/editorials')
+def edit():
+    nyEdt = getNyt.nyt()
+    return render_template("editorial.html", editorialHeader=', '.join((nyEdt[0],dt.date.today().strftime("%m/%d/%Y"))), editorialContent='\n\n'.join(nyEdt[1]))
 
 if __name__ == "__main__":
     app.run(debug = True)

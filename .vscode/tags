@@ -1,0 +1,31 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BeautifulSoup	../app.py	/^from bs4 import BeautifulSoup$/;"	kind:namespace	line:6
+BeautifulSoup	../getNyt.py	/^from bs4 import BeautifulSoup$/;"	kind:namespace	line:3
+Flask	../app.py	/^from flask import Flask, url_for, redirect, render_template, request$/;"	kind:namespace	line:2
+app	../app.py	/^app = Flask(__name__)$/;"	kind:variable	line:8
+app.py	../app.py	1;"	kind:file	line:1
+dt	../app.py	/^import datetime as dt$/;"	kind:namespace	line:7
+e2e	../app.py	/^def e2e():$/;"	kind:function	line:29
+getNyt	../app.py	/^import getNyt$/;"	kind:namespace	line:1
+getNyt.py	../getNyt.py	1;"	kind:file	line:1
+getpass	../app.py	/^import getpass$/;"	kind:namespace	line:3
+lxml	../app.py	/^import lxml$/;"	kind:namespace	line:4
+lxml	../getNyt.py	/^import lxml$/;"	kind:namespace	line:1
+main	../app.py	/^def main():$/;"	kind:function	line:11
+nyt	../app.py	/^def nyt():$/;"	kind:function	line:43
+nyt	../getNyt.py	/^def nyt():$/;"	kind:function	line:4
+redirect	../app.py	/^from flask import Flask, url_for, redirect, render_template, request$/;"	kind:namespace	line:2
+render_template	../app.py	/^from flask import Flask, url_for, redirect, render_template, request$/;"	kind:namespace	line:2
+request	../app.py	/^from flask import Flask, url_for, redirect, render_template, request$/;"	kind:namespace	line:2
+requests	../app.py	/^import requests$/;"	kind:namespace	line:5
+requests	../getNyt.py	/^import requests$/;"	kind:namespace	line:2
+thehindu	../app.py	/^def thehindu():$/;"	kind:function	line:36
+thehindu	../getNyt.py	/^def thehindu():$/;"	kind:function	line:18
+url_for	../app.py	/^from flask import Flask, url_for, redirect, render_template, request$/;"	kind:namespace	line:2
+welcome	../app.py	/^def welcome():$/;"	kind:function	line:22
+welcomeUser	../app.py	/^def welcomeUser(user):$/;"	kind:function	line:15

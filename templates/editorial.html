@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+ <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Editorials</title>
+</head>
+<body>
+    
+          
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Editorials</a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="{{ url_for('nyt') }}">NYT</a></li>
+                <li><a href="{{ url_for('thehindu') }}">The Hindu</a></li>
+                <li><a href="collapsible.html">Others</a></li>
+            </ul>
+        </div>
+    </nav>
+        <!-- Grey navigation panel -->
+     <div class="row">
+
+      <div class="col s3">
+        <!-- Grey navigation panel -->
+      </div>
+
+      <div class="col s9">
+        <!-- Teal page content  -->
+        <div class="container">
+            <div id="test"><h4>This is an editorial page for NYT</h4></div> 
+            <div class="card-panel teal lighten-2"> <h2>{{editorialHeader}}</h2> </div>
+            <p class="flow-text">{{editorialContent}}
+        </div>
+    </div>
+
+    </div>
+    
+   
+
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+</body>
