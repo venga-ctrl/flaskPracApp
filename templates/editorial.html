@@ -13,11 +13,11 @@
           
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Editorials</a>
-            <ul id="nav-mobile" class="right">
+            <a href="#" class="brand-logo left">Editorials</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('nyt') }}">NYT</a></li>
                 <li><a href="{{ url_for('thehindu') }}">The Hindu</a></li>
-                <li><a href="collapsible.html">Others</a></li>
+                <li><a href="#">Others</a></li>
             </ul>
         </div>
     </nav>
@@ -32,7 +32,7 @@
         <!-- Teal page content  -->
         <div class="container">
             <div id="test"><h4>This is an editorial page for NYT</h4></div> 
-            <div class="card-panel teal lighten-2"> <h2>{{editorialHeader}}</h2> </div>
+            <div class="card-panel teal lighten-2"> <h3>{{editorialHeader}}</h3> </div>
             <p class="flow-text">{{editorialContent}}
         </div>
     </div>
