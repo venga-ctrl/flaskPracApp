@@ -51,5 +51,21 @@ def edit():
     nyEdt = getNyt.nyt()
     return render_template("editorial.html", editorialHeader=', '.join((nyEdt[0],dt.date.today().strftime("%m/%d/%Y"))), editorialContent='\n\n'.join(nyEdt[1]))
 
+@app.route('/bmi', methods=["GET", "POST"])
+def bmi():
+    myName = ""
+    myWeight = 0
+    myHeight = 1
+    if request.method == "POST" and 'userName' in request.form:
+        myName = request.form.get("userName")
+        myWeight = float(request.form.get("userWeight"))
+        myHeight = float(request.form.get("userHeight"))
+        jsnObj = json.dumps({"a": myWeight, "b": myHeight, "Name": myName})
+        return render_template('bmi.html', name = myName, bmi = round(myWeight/(myHeight*myHeight),1))
+        # return jsnObj
+    else:
+        return render_template('bmi.html')
+
+
 if __name__ == "__main__":
     app.run(debug = True)
